@@ -1,3 +1,4 @@
+const Jsonix = require('jsonix').Jsonix;
 // Include or require PO.js so that PO variable is available
 // For instance, in node.js:
 var PO = require('./mappings/PO').PO;
@@ -5,7 +6,6 @@ var PO = require('./mappings/PO').PO;
 // First we construct a Jsonix context - a factory for unmarshaller (parser)
 // and marshaller (serializer)
 var context = new Jsonix.Context([PO]);
-
 // Then we create a unmarshaller
 var unmarshaller = context.createUnmarshaller();
 
