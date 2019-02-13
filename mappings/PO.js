@@ -3,72 +3,11 @@ var PO_Module_Factory = function () {
     name: 'PO',
     defaultElementNamespaceURI: 'urn:ietf:params:xml:ns:xmpp-stanzas',
     typeInfos: [{
-        localName: 'Presence',
+        localName: 'Subject',
         typeName: null,
         propertyInfos: [{
-            name: 'showOrStatusOrPriority',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            allowDom: false,
-            elementTypeInfos: [{
-                elementName: {
-                  localPart: 'show',
-                  namespaceURI: 'jabber:client'
-                }
-              }, {
-                elementName: {
-                  localPart: 'status',
-                  namespaceURI: 'jabber:client'
-                },
-                typeInfo: '.Status'
-              }, {
-                elementName: {
-                  localPart: 'priority',
-                  namespaceURI: 'jabber:client'
-                },
-                typeInfo: 'Byte'
-              }],
-            type: 'elementRefs'
-          }, {
-            name: 'any',
-            minOccurs: 0,
-            collection: true,
-            mixed: false,
-            type: 'anyElement'
-          }, {
-            name: 'error',
-            elementName: {
-              localPart: 'error',
-              namespaceURI: 'jabber:client'
-            },
-            typeInfo: '.Error'
-          }, {
-            name: 'from',
-            attributeName: {
-              localPart: 'from'
-            },
-            type: 'attribute'
-          }, {
-            name: 'id',
-            typeInfo: 'NMToken',
-            attributeName: {
-              localPart: 'id'
-            },
-            type: 'attribute'
-          }, {
-            name: 'to',
-            attributeName: {
-              localPart: 'to'
-            },
-            type: 'attribute'
-          }, {
-            name: 'type',
-            values: ['error', 'probe', 'subscribe', 'subscribed', 'unavailable', 'unsubscribe', 'unsubscribed'],
-            attributeName: {
-              localPart: 'type'
-            },
-            type: 'attribute'
+            name: 'value',
+            type: 'value'
           }, {
             name: 'lang',
             typeInfo: 'Language',
@@ -131,6 +70,127 @@ var PO_Module_Factory = function () {
           }]
       }, {
         localName: 'Body',
+        typeName: null,
+        propertyInfos: [{
+            name: 'value',
+            type: 'value'
+          }, {
+            name: 'lang',
+            typeInfo: 'Language',
+            attributeName: {
+              localPart: 'lang',
+              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Presence',
+        typeName: null,
+        propertyInfos: [{
+            name: 'showOrStatusOrPriority',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            allowDom: false,
+            elementTypeInfos: [{
+                elementName: {
+                  localPart: 'show',
+                  namespaceURI: 'jabber:client'
+                }
+              }, {
+                elementName: {
+                  localPart: 'priority',
+                  namespaceURI: 'jabber:client'
+                },
+                typeInfo: 'Byte'
+              }, {
+                elementName: {
+                  localPart: 'status',
+                  namespaceURI: 'jabber:client'
+                },
+                typeInfo: '.Status'
+              }],
+            type: 'elementRefs'
+          }, {
+            name: 'any',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            type: 'anyElement'
+          }, {
+            name: 'error',
+            elementName: {
+              localPart: 'error',
+              namespaceURI: 'jabber:client'
+            },
+            typeInfo: '.Error'
+          }, {
+            name: 'from',
+            attributeName: {
+              localPart: 'from'
+            },
+            type: 'attribute'
+          }, {
+            name: 'id',
+            typeInfo: 'NMToken',
+            attributeName: {
+              localPart: 'id'
+            },
+            type: 'attribute'
+          }, {
+            name: 'to',
+            attributeName: {
+              localPart: 'to'
+            },
+            type: 'attribute'
+          }, {
+            name: 'type',
+            values: ['error', 'probe', 'subscribe', 'subscribed', 'unavailable', 'unsubscribe', 'unsubscribed'],
+            attributeName: {
+              localPart: 'type'
+            },
+            type: 'attribute'
+          }, {
+            name: 'lang',
+            typeInfo: 'Language',
+            attributeName: {
+              localPart: 'lang',
+              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Text',
+        typeName: null,
+        propertyInfos: [{
+            name: 'value',
+            type: 'value'
+          }, {
+            name: 'lang',
+            typeInfo: 'Language',
+            attributeName: {
+              localPart: 'lang',
+              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Thread',
+        typeName: null,
+        propertyInfos: [{
+            name: 'value',
+            typeInfo: 'NMToken',
+            type: 'value'
+          }, {
+            name: 'parent',
+            typeInfo: 'NMToken',
+            attributeName: {
+              localPart: 'parent'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Status',
         typeName: null,
         propertyInfos: [{
             name: 'value',
@@ -220,26 +280,190 @@ var PO_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Subject',
+        localName: 'Body',
         typeName: null,
         propertyInfos: [{
-            name: 'value',
-            type: 'value'
+            name: 'otherAttributes',
+            type: 'anyAttribute'
           }, {
-            name: 'lang',
-            typeInfo: 'Language',
+            name: 'uri',
+            elementName: {
+              localPart: 'uri',
+              namespaceURI: 'http:\/\/jabber.org\/protocol\/httpbind'
+            }
+          }, {
+            name: 'any',
+            minOccurs: 0,
+            collection: true,
+            mixed: false,
+            type: 'anyElement'
+          }, {
+            name: 'accept',
             attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
+              localPart: 'accept'
             },
             type: 'attribute'
-          }]
-      }, {
-        localName: 'Text',
-        typeName: null,
-        propertyInfos: [{
-            name: 'value',
-            type: 'value'
+          }, {
+            name: 'ack',
+            typeInfo: 'PositiveInteger',
+            attributeName: {
+              localPart: 'ack'
+            },
+            type: 'attribute'
+          }, {
+            name: 'authid',
+            attributeName: {
+              localPart: 'authid'
+            },
+            type: 'attribute'
+          }, {
+            name: 'charsets',
+            typeInfo: {
+              type: 'list',
+              baseTypeInfo: 'NMTokens'
+            },
+            attributeName: {
+              localPart: 'charsets'
+            },
+            type: 'attribute'
+          }, {
+            name: 'condition',
+            values: ['bad-request', 'host-gone', 'host-unknown', 'improper-addressing', 'internal-server-error', 'item-not-found', 'other-request', 'policy-violation', 'remote-connection-failed', 'remote-stream-error', 'see-other-uri', 'system-shutdown', 'undefined-condition'],
+            attributeName: {
+              localPart: 'condition'
+            },
+            type: 'attribute'
+          }, {
+            name: 'content',
+            attributeName: {
+              localPart: 'content'
+            },
+            type: 'attribute'
+          }, {
+            name: 'from',
+            attributeName: {
+              localPart: 'from'
+            },
+            type: 'attribute'
+          }, {
+            name: 'hold',
+            typeInfo: 'UnsignedByte',
+            attributeName: {
+              localPart: 'hold'
+            },
+            type: 'attribute'
+          }, {
+            name: 'inactivity',
+            typeInfo: 'UnsignedShort',
+            attributeName: {
+              localPart: 'inactivity'
+            },
+            type: 'attribute'
+          }, {
+            name: 'key',
+            attributeName: {
+              localPart: 'key'
+            },
+            type: 'attribute'
+          }, {
+            name: 'maxpause',
+            typeInfo: 'UnsignedShort',
+            attributeName: {
+              localPart: 'maxpause'
+            },
+            type: 'attribute'
+          }, {
+            name: 'newkey',
+            attributeName: {
+              localPart: 'newkey'
+            },
+            type: 'attribute'
+          }, {
+            name: 'pause',
+            typeInfo: 'UnsignedShort',
+            attributeName: {
+              localPart: 'pause'
+            },
+            type: 'attribute'
+          }, {
+            name: 'polling',
+            typeInfo: 'UnsignedShort',
+            attributeName: {
+              localPart: 'polling'
+            },
+            type: 'attribute'
+          }, {
+            name: 'report',
+            typeInfo: 'PositiveInteger',
+            attributeName: {
+              localPart: 'report'
+            },
+            type: 'attribute'
+          }, {
+            name: 'requests',
+            typeInfo: 'UnsignedByte',
+            attributeName: {
+              localPart: 'requests'
+            },
+            type: 'attribute'
+          }, {
+            name: 'rid',
+            typeInfo: 'PositiveInteger',
+            attributeName: {
+              localPart: 'rid'
+            },
+            type: 'attribute'
+          }, {
+            name: 'route',
+            attributeName: {
+              localPart: 'route'
+            },
+            type: 'attribute'
+          }, {
+            name: 'sid',
+            attributeName: {
+              localPart: 'sid'
+            },
+            type: 'attribute'
+          }, {
+            name: 'stream',
+            attributeName: {
+              localPart: 'stream'
+            },
+            type: 'attribute'
+          }, {
+            name: 'time',
+            typeInfo: 'UnsignedShort',
+            attributeName: {
+              localPart: 'time'
+            },
+            type: 'attribute'
+          }, {
+            name: 'to',
+            attributeName: {
+              localPart: 'to'
+            },
+            type: 'attribute'
+          }, {
+            name: 'type',
+            values: ['error', 'terminate'],
+            attributeName: {
+              localPart: 'type'
+            },
+            type: 'attribute'
+          }, {
+            name: 'ver',
+            attributeName: {
+              localPart: 'ver'
+            },
+            type: 'attribute'
+          }, {
+            name: 'wait',
+            typeInfo: 'UnsignedShort',
+            attributeName: {
+              localPart: 'wait'
+            },
+            type: 'attribute'
           }, {
             name: 'lang',
             typeInfo: 'Language',
@@ -379,114 +603,8 @@ var PO_Module_Factory = function () {
             },
             type: 'attribute'
           }]
-      }, {
-        localName: 'Status',
-        typeName: null,
-        propertyInfos: [{
-            name: 'value',
-            type: 'value'
-          }, {
-            name: 'lang',
-            typeInfo: 'Language',
-            attributeName: {
-              localPart: 'lang',
-              namespaceURI: 'http:\/\/www.w3.org\/XML\/1998\/namespace'
-            },
-            type: 'attribute'
-          }]
-      }, {
-        localName: 'Thread',
-        typeName: null,
-        propertyInfos: [{
-            name: 'value',
-            typeInfo: 'NMToken',
-            type: 'value'
-          }, {
-            name: 'parent',
-            typeInfo: 'NMToken',
-            attributeName: {
-              localPart: 'parent'
-            },
-            type: 'attribute'
-          }]
       }],
     elementInfos: [{
-        values: [''],
-        elementName: 'recipient-unavailable'
-      }, {
-        values: [''],
-        elementName: 'item-not-found'
-      }, {
-        values: [''],
-        elementName: 'subscription-required'
-      }, {
-        typeInfo: '.Status',
-        elementName: {
-          localPart: 'status',
-          namespaceURI: 'jabber:client'
-        }
-      }, {
-        values: [''],
-        elementName: 'not-acceptable'
-      }, {
-        typeInfo: '.Text',
-        elementName: 'text'
-      }, {
-        elementName: 'redirect'
-      }, {
-        values: [''],
-        elementName: 'not-authorized'
-      }, {
-        typeInfo: '.Thread',
-        elementName: {
-          localPart: 'thread',
-          namespaceURI: 'jabber:client'
-        }
-      }, {
-        values: [''],
-        elementName: 'internal-server-error'
-      }, {
-        values: [''],
-        elementName: 'jid-malformed'
-      }, {
-        values: [''],
-        elementName: 'feature-not-implemented'
-      }, {
-        values: [''],
-        elementName: 'registration-required'
-      }, {
-        values: [''],
-        elementName: 'resource-constraint'
-      }, {
-        values: [''],
-        elementName: 'remote-server-not-found'
-      }, {
-        typeInfo: '.Error',
-        elementName: {
-          localPart: 'error',
-          namespaceURI: 'jabber:client'
-        }
-      }, {
-        elementName: 'gone'
-      }, {
-        values: [''],
-        elementName: 'forbidden'
-      }, {
-        typeInfo: '.Presence',
-        elementName: {
-          localPart: 'presence',
-          namespaceURI: 'jabber:client'
-        }
-      }, {
-        values: [''],
-        elementName: 'payment-required'
-      }, {
-        values: [''],
-        elementName: 'not-allowed'
-      }, {
-        values: [''],
-        elementName: 'bad-request'
-      }, {
         typeInfo: '.Message',
         elementName: {
           localPart: 'message',
@@ -496,14 +614,72 @@ var PO_Module_Factory = function () {
         typeInfo: '.Body',
         elementName: {
           localPart: 'body',
+          namespaceURI: 'http:\/\/jabber.org\/protocol\/httpbind'
+        }
+      }, {
+        values: [''],
+        elementName: 'not-authorized'
+      }, {
+        typeInfo: '.Error',
+        elementName: {
+          localPart: 'error',
+          namespaceURI: 'jabber:client'
+        }
+      }, {
+        typeInfo: '.Thread',
+        elementName: {
+          localPart: 'thread',
           namespaceURI: 'jabber:client'
         }
       }, {
         values: [''],
-        elementName: 'service-unavailable'
+        elementName: 'payment-required'
+      }, {
+        values: [''],
+        elementName: 'not-allowed'
+      }, {
+        typeInfo: '.Iq',
+        elementName: {
+          localPart: 'iq',
+          namespaceURI: 'jabber:client'
+        }
+      }, {
+        elementName: 'redirect'
+      }, {
+        values: [''],
+        elementName: 'resource-constraint'
+      }, {
+        values: [''],
+        elementName: 'internal-server-error'
+      }, {
+        values: [''],
+        elementName: 'subscription-required'
+      }, {
+        typeInfo: '.Presence',
+        elementName: {
+          localPart: 'presence',
+          namespaceURI: 'jabber:client'
+        }
+      }, {
+        values: [''],
+        elementName: 'bad-request'
       }, {
         values: [''],
         elementName: 'unexpected-request'
+      }, {
+        elementName: 'gone'
+      }, {
+        values: [''],
+        elementName: 'recipient-unavailable'
+      }, {
+        values: [''],
+        elementName: 'registration-required'
+      }, {
+        values: [''],
+        elementName: 'undefined-condition'
+      }, {
+        values: [''],
+        elementName: 'remote-server-not-found'
       }, {
         typeInfo: '.Subject',
         elementName: {
@@ -515,29 +691,53 @@ var PO_Module_Factory = function () {
         elementName: 'remote-server-timeout'
       }, {
         values: [''],
-        elementName: 'conflict'
-      }, {
-        typeInfo: '.Iq',
-        elementName: {
-          localPart: 'iq',
-          namespaceURI: 'jabber:client'
-        }
+        elementName: 'forbidden'
       }, {
         values: [''],
-        elementName: 'undefined-condition'
+        elementName: 'feature-not-implemented'
       }, {
-        values: ['away', 'chat', 'dnd', 'xa'],
+        typeInfo: '.Text',
+        elementName: 'text'
+      }, {
+        values: [''],
+        elementName: 'service-unavailable'
+      }, {
+        typeInfo: 'Byte',
         elementName: {
-          localPart: 'show',
+          localPart: 'priority',
           namespaceURI: 'jabber:client'
         }
       }, {
         values: [''],
         elementName: 'policy-violation'
       }, {
-        typeInfo: 'Byte',
+        typeInfo: '.Status',
         elementName: {
-          localPart: 'priority',
+          localPart: 'status',
+          namespaceURI: 'jabber:client'
+        }
+      }, {
+        values: [''],
+        elementName: 'not-acceptable'
+      }, {
+        typeInfo: '.Body',
+        elementName: {
+          localPart: 'body',
+          namespaceURI: 'jabber:client'
+        }
+      }, {
+        values: [''],
+        elementName: 'item-not-found'
+      }, {
+        values: [''],
+        elementName: 'conflict'
+      }, {
+        values: [''],
+        elementName: 'jid-malformed'
+      }, {
+        values: ['away', 'chat', 'dnd', 'xa'],
+        elementName: {
+          localPart: 'show',
           namespaceURI: 'jabber:client'
         }
       }]
