@@ -1,0 +1,7 @@
+{
+  "name": "jsonix-example",
+  "version": "0.0.1",
+  "description": "jsonix example with XMPP schema and data",
+  "main": "index.js",
+  "license": "proprietary"
+}

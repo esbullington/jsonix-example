@@ -1,0 +1,19 @@
+<body xmlns="http://jabber.org/protocol/httpbind">
+        <presence xmlns="jabber:client" 
+        from="zambo@conference.ymc-pg-ejabberd/admin" 
+        to="frank@ymc-pg-ejabberd/17046541991329220505919269">
+        <priority>1</priority>
+        <c xmlns="http://jabber.org/protocol/caps" 
+            node="http://pidgin.im/" 
+            hash="sha-1" 
+            ver="lV6i//bt2U8Rm0REcX8h4F3Nk3M=" 
+            ext="voice-v1 camera-v1 video-v1" />
+        <x xmlns="vcard-temp:x:update">
+            <photo />
+        </x>
+        <x xmlns="http://jabber.org/protocol/muc#user">
+            <item affiliation="owner"
+                role="moderator" />
+        </x>
+    </presence>
+</body>
