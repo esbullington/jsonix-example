@@ -10,7 +10,7 @@ var context = new Jsonix.Context([PO]);
 var unmarshaller = context.createUnmarshaller();
 
 // Unmarshal an object from the XML retrieved from the URL
-unmarshaller.unmarshalURL('data/message_response.xml',
+unmarshaller.unmarshalURL('http://127.0.0.1:8000/data/presence_response.xml',
     // This callback function will be provided with the result of the unmarshalling
     function (unmarshalled) {
         console.log(unmarshalled); 
