@@ -1,14 +1,12 @@
-<body xmlns="http://jabber.org/protocol/httpbind">
-    <message xmlns="jabber:client" 
-        from="zambo@conference.ymc-pg-ejabberd/frank" 
-        to="frank@ymc-pg-ejabberd/17046541991329220505919269" 
-        type="groupchat" 
-        id="2719">
-        <body xmlns="jabber:client">Hi Jörg. Hast du das gekriegt?</body>
-        <x xmlns="jabber:x:event">
-            <composing />
-        </x>
-        <x xmlns="jabber:x:delay"
-            stamp="20120214T11:20:48" />
-    </message>
-</body>
+<message xmlns="jabber:client" 
+    from="zambo@conference.ymc-pg-ejabberd/frank" 
+    to="frank@ymc-pg-ejabberd/17046541991329220505919269" 
+    type="groupchat" 
+    id="2719">
+    <body xmlns="jabber:client">Hi Jörg. Hast du das gekriegt?</body>
+    <x xmlns="jabber:x:event">
+        <composing />
+    </x>
+    <x xmlns="jabber:x:delay"
+        stamp="20120214T11:20:48" />
+</message>
